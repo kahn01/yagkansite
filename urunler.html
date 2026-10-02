@@ -4,131 +4,37 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light only">
-<title>Ürün Kataloğu | Yağkan Özen Hırdavat Madeni Yağ</title>
-<meta name="description" content="Madeni yağ, cıvata, somun, filtre ve hırdavat ürün kataloğu. Yağkan Özen Hırdavat, Canik Samsun.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-html{color-scheme:light only}
-:root{
-  --ink:#14212b; --steel:#5b6b76; --line:#d5dbdf; --bg:#f2f4f5; --white:#fff;
-  --amber:#f2a900; --amber-d:#c98900; --wa:#1a9e4d;
-}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{font-family:Barlow,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;font-size:17px}
-h1,h2,h3{font-family:'Barlow Condensed',Impact,sans-serif;line-height:1.05;letter-spacing:.01em}
-a{color:inherit}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
-
-/* hero */
-.hero{background:var(--ink);color:#fff;padding:56px 0 48px;border-bottom:8px solid var(--amber)}
-.hero h1{font-size:clamp(2.6rem,9vw,5.2rem);font-weight:800;text-transform:uppercase}
-.hero h1 span{color:var(--amber);display:block}
-.hero p.sub{margin-top:14px;max-width:34rem;color:#c5d0d7;font-size:1.1rem}
-.status{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:6px 14px;border:1px solid #3a4b58;border-radius:99px;font-weight:600;font-size:.95rem}
-.dot{width:10px;height:10px;border-radius:50%;background:#888}
-.open .dot{background:#3ddc84}.closed .dot{background:#ff6b5e}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:6px;font-weight:600;text-decoration:none;font-size:1.05rem;min-height:50px}
-.btn-call{background:var(--amber);color:var(--ink)}
-.btn-call:hover{background:#ffbe2e}
-.btn-wa{background:var(--wa);color:#fff}
-.btn-wa:hover{background:#158a42}
-.btn-map{border:2px solid #4a5c69;color:#fff}
-.btn-map:hover{border-color:#fff}
-
-section{padding:52px 0;color:var(--ink)}
-#iletisim{background:var(--bg)}
-#iletisim h2,.info dd,.info dd a,.hours td{color:var(--ink)}
-.info dt{color:var(--steel)}
-h2{font-size:clamp(2rem,6vw,2.8rem);font-weight:700;text-transform:uppercase;margin-bottom:22px}
-h2::after{content:"";display:block;width:56px;height:5px;background:var(--amber);margin-top:10px}
-
-/* products */
-.cats{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.cat{background:var(--white);border:1px solid var(--line);border-left:6px solid var(--amber);padding:22px}
-.cat h3{font-size:1.8rem;font-weight:700;margin-bottom:8px}
-.cat ul{padding-left:18px;color:var(--steel)}
-.cat li{margin:2px 0}
-.ask{margin-top:24px;background:var(--white);border:1px dashed var(--steel);padding:18px 20px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
-.brands{margin-top:26px}
-.brands h3{font-size:1.3rem;margin-bottom:10px;color:var(--steel)}
-.brandlist{display:flex;flex-wrap:wrap;gap:10px}
-.brandlist span{background:#fff;border:1px solid var(--line);padding:14px 22px;border-radius:4px;display:flex;align-items:center;justify-content:center;min-width:130px}
-.brandlist img{height:40px;width:auto;max-width:130px;object-fit:contain;display:block}
-
-/* trust */
-.trust{background:var(--white);border-block:1px solid var(--line)}
-.about{max-width:38rem;color:#33434f}
-.gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:26px}
-.gallery div{aspect-ratio:3/4;background:#e3e8eb;display:grid;place-items:center;color:var(--steel);font-size:.9rem;text-align:center;padding:10px}
-.gallery img{width:100%;height:100%;object-fit:cover;display:block}
-.reviews{margin-top:30px;padding:22px;background:var(--bg);border:1px solid var(--line)}
-.reviews p{margin-bottom:14px}
-
-/* contact */
-.contact{display:grid;gap:26px;grid-template-columns:1fr}
-@media(min-width:800px){.contact{grid-template-columns:5fr 6fr}}
-.info dt{font-weight:600;color:var(--steel);font-size:.9rem;margin-top:14px}
-.info dd{font-size:1.15rem}
-.info dd a{font-weight:600}
-.hours{border-collapse:collapse;margin-top:2px}
-.hours td{padding:2px 16px 2px 0}
-.mapbox{border:1px solid var(--line);min-height:320px;background:#dde3e6}
-.mapbox iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
-
-footer{background:var(--ink);color:#9fb0bb;padding:24px 0;font-size:.92rem}
-
-
-/* katalog */
-#katalog{background:var(--bg)}
-.tools{display:grid;gap:10px;margin-bottom:16px}
-.tools input,.tools select{width:100%;padding:12px 14px;font:inherit;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);min-height:48px}
-.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.tabs button{font:inherit;font-weight:600;padding:10px 16px;border:2px solid var(--ink);background:#fff;color:var(--ink);border-radius:99px;cursor:pointer;min-height:44px}
-.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--amber)}
-.filters{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:12px}
-.filters label{font-size:.85rem;font-weight:600;color:var(--steel);display:grid;gap:4px}
-.count{color:var(--steel);margin-bottom:14px;font-size:.95rem}
-.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(220px,1fr))}
-.card{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column}
-.card .ph{aspect-ratio:1/1;background:#e3e8eb;display:grid;place-items:center;color:var(--steel);font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:700;text-align:center;padding:10px;overflow:hidden}
-.card .ph img{width:100%;height:100%;object-fit:contain;background:#fff}
-.card .bd{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
-.card h3{font-size:1.35rem;font-weight:700}
-.tags{display:flex;flex-wrap:wrap;gap:6px}
-.tags span{background:var(--bg);border:1px solid var(--line);padding:2px 9px;font-size:.85rem;border-radius:4px}
-.price{font-weight:600}
-.out{color:#b0000f;font-weight:600;font-size:.9rem}
-.card .btn{margin-top:auto;min-height:44px;padding:10px 14px;font-size:1rem}
-.msg{padding:24px;background:#fff;border:1px dashed var(--steel)}
-@media(min-width:700px){.tools{grid-template-columns:1fr}}
-
-/* mobil sabit arama çubuğu */
-.sticky{display:none}
-@media(max-width:700px){
-  .sticky{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:10;padding-bottom:env(safe-area-inset-bottom,0)}
-  .sticky a{padding:15px;text-align:center;font-weight:600;text-decoration:none;color:#fff}
-  .sticky .c{background:var(--ink);color:var(--amber)}
-  .sticky .w{background:var(--wa)}
-  body{padding-bottom:56px}
-}
-.top{background:var(--ink);color:#fff;border-bottom:8px solid var(--amber);padding:18px 0}
-.top .wrap{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
-.top a.home{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:1.6rem;text-transform:uppercase;text-decoration:none;line-height:1.05}
-.top a.home small{display:block;color:var(--amber);font-size:1rem;font-weight:700}
-.top .btn{min-height:44px;padding:10px 18px}
-</style>
+<title>Ürün Kataloğu – Motor Yağı, Hidrolik ve Şanzıman Yağı | Yağkan Madeni Yağ, Samsun</title>
+<meta name="description" content="Yağkan Madeni Yağ ürün kataloğu: Castrol, Mobil, Opet, Petrol Ofisi ve diğer markalarda kamyon, traktör, binek motor yağı, hidrolik ve şanzıman yağı, antifriz, gres, cıvata. Canik / Samsun.">
+<link rel="canonical" href="https://yagkan.com.tr/urunler.html">
+<meta name="theme-color" content="#14212b">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:site_name" content="Yağkan Madeni Yağ">
+<meta property="og:title" content="Ürün Kataloğu – Yağkan Madeni Yağ">
+<meta property="og:description" content="Motor yağı, hidrolik ve şanzıman yağı, antifriz, gres, cıvata. Stok ve fiyat için WhatsApp: 0532 647 23 67">
+<meta property="og:url" content="https://yagkan.com.tr/urunler.html">
+<meta property="og:image" content="https://yagkan.com.tr/img/og-yagkan.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yagkan.com.tr/img/og-yagkan.jpg">
+<link rel="preconnect" href="https://docs.google.com" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
+<!-- Cloudflare Web Analytics (bkz. index.html ve README):
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "BURAYA_CLOUDFLARE_TOKEN"}'></script>
+-->
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="home" href="index.html">Yağkan Özen<small>Hırdavat &amp; Madeni Yağ</small></a>
-    <div class="actions" style="margin:0">
-      <a class="btn btn-map" href="index.html">Ana Sayfa</a>
+    <a class="home" href="/">Yağkan <span>Madeni Yağ</span></a>
+    <div class="actions">
+      <a class="btn btn-ghost" href="/">Ana Sayfa</a>
       <a class="btn btn-call" href="tel:+905326472367">Ara: 0532 647 23 67</a>
     </div>
   </div>
@@ -136,90 +42,29 @@ footer{background:var(--ink);color:#9fb0bb;padding:24px 0;font-size:.92rem}
 <main>
 <section id="katalog">
   <div class="wrap">
-    <h2>Ürün Kataloğu</h2>
-    <div class="tools"><input id="q" type="search" placeholder="Ürün ara: marka, viskozite, ölçü..." aria-label="Ürün ara"></div>
+    <h1>Ürün Kataloğu</h1>
+    <p class="lead">Kamyon, traktör, binek ve motosiklet motor yağları; şanzıman ve hidrolik yağları, antifriz, fren hidroliği, gres ve cıvata. Listede olmayan ürünleri de sorabilirsiniz; stok ve güncel fiyat için WhatsApp'tan yazın.</p>
+    <div class="tools"><input id="q" type="search" placeholder="Ürün ara: marka, viskozite (15W-40), ölçü..." aria-label="Ürün ara"></div>
     <div class="tabs" id="tabs"></div>
-    <div class="filters" id="filters"></div>
-    <div class="count" id="count"></div>
+    <details class="filterbox" id="filterbox"><summary>Filtrele: marka, viskozite, ambalaj…</summary><div class="filters" id="filters"></div></details>
+    <div class="count" id="count" aria-live="polite"></div>
     <div class="grid" id="grid"><div class="msg">Ürünler yükleniyor...</div></div>
+    <noscript><div class="msg">Katalog için JavaScript gerekir. Stok ve fiyat için arayın: 0532 647 23 67</div></noscript>
   </div>
 </section>
-
 </main>
 <footer>
-  <div class="wrap">© <span id="yil"></span> Yağkan Özen Hırdavat Madeni Yağ · Yenimahalle 5. Sk. Eski Sanayi Sitesi No:24 Canik / Samsun · Pzt–Cmt 09.00–17.00</div>
+  <div class="wrap">
+    <p><strong>Yağkan Madeni Yağ</strong> · Yenimahalle Mah. 5. Sk. Eski Sanayi Sitesi No:24, 55100 Canik / Samsun · <a href="tel:+905326472367">0532 647 23 67</a></p>
+    <p><span data-hours-short></span></p>
+    <p>© <span data-year>2026</span> Yağkan Madeni Yağ</p>
+  </div>
 </footer>
 <nav class="sticky" aria-label="Hızlı iletişim">
   <a class="c" href="tel:+905326472367">Ara</a>
-  <a class="w" href="https://wa.me/905326472367" target="_blank" rel="noopener">WhatsApp</a>
+  <a class="w" href="https://wa.me/905326472367?text=Merhaba%2C%20stok%20ve%20fiyat%20bilgisi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a>
 </nav>
-<script>
-document.getElementById('yil').textContent=new Date().getFullYear();
-(function(){
-var CSV_URL='https://docs.google.com/spreadsheets/d/e/2PACX-1vR7TTSVHmU-i_IAX3ldiYT2yBubRv22yTlQ7VMAmNoueTywHmIG97zE0dlbBRZ1S92FaA8JJBaIHB6M/pub?output=csv';
-var WA='905326472367';
-var FILTERS=[['marka','Marka'],['viskozite','Viskozite'],['ambalaj','Ambalaj'],['tur','Tür'],['malzeme','Malzeme'],['olcu','Ölçü'],['arac','Araç']];
-var items=[],state={cat:'',q:'',f:{}};
-var $=function(id){return document.getElementById(id)};
-var norm=function(s){return (s||'').toLocaleLowerCase('tr').trim()};
-function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
-function parseCSV(t){var r=[],row=[],v='',q=false,i,c;
-  for(i=0;i<t.length;i++){c=t[i];
-    if(q){if(c=='"'){if(t[i+1]=='"'){v+='"';i++}else q=false}else v+=c}
-    else if(c=='"')q=true;
-    else if(c==','){row.push(v);v=''}
-    else if(c=='\n'){row.push(v);r.push(row);row=[];v=''}
-    else if(c!='\r')v+=c}
-  if(v||row.length){row.push(v);r.push(row)}return r}
-function photo(u){u=(u||'').trim();if(!u)return '';
-  var m=u.match(/\/d\/([\w-]+)/)||u.match(/[?&]id=([\w-]+)/);
-  if(m&&/drive\.google\.com/.test(u))return 'https://drive.google.com/thumbnail?id='+m[1]+'&sz=w600';
-  return /^https:\/\//.test(u)?u:''}
-function uniq(list){var seen={},out=[];list.forEach(function(v){v=(v||'').trim();var k=norm(v);if(k&&!seen[k]){seen[k]=1;out.push(v)}});
-  return out.sort(function(a,b){return a.localeCompare(b,'tr',{numeric:true})})}
-function inCat(p){return !state.cat||norm(p.kategori)===norm(state.cat)}
-function match(p){
-  if(!inCat(p))return false;
-  for(var k in state.f){if(state.f[k]&&norm(p[k])!==norm(state.f[k]))return false}
-  if(state.q){var hay=norm(Object.keys(p).map(function(k){return p[k]}).join(' '));
-    return state.q.split(/\s+/).every(function(w){return hay.indexOf(w)>-1})}
-  return true}
-function drawTabs(){
-  var cats=uniq(items.map(function(p){return p.kategori})),h='';
-  [''].concat(cats).forEach(function(c){
-    h+='<button type="button" data-c="'+esc(c)+'" aria-pressed="'+(norm(c)===norm(state.cat))+'">'+esc(c||'Tümü')+'</button>'});
-  $('tabs').innerHTML=h}
-function drawFilters(){
-  var pool=items.filter(inCat),h='';
-  FILTERS.forEach(function(f){
-    var vals=uniq(pool.map(function(p){return p[f[0]]}));
-    if(!vals.length)return;
-    h+='<label>'+f[1]+'<select data-f="'+f[0]+'"><option value="">Hepsi</option>'+
-      vals.map(function(v){return '<option'+(norm(state.f[f[0]])===norm(v)?' selected':'')+'>'+esc(v)+'</option>'}).join('')+'</select></label>'});
-  $('filters').innerHTML=h}
-function drawGrid(){
-  var list=items.filter(match);
-  $('count').textContent=list.length+' ürün';
-  if(!list.length){$('grid').innerHTML='<div class="msg">Sonuç bulunamadı. Aradığınız ürünü WhatsApp\'tan sorabilirsiniz.</div>';return}
-  $('grid').innerHTML=list.map(function(p){
-    var img=photo(p.foto),tags=[p.viskozite,p.ambalaj,p.hacim,p.tur,p.malzeme,p.olcu,p.arac].filter(function(x){return x&&x.trim()});
-    var msg='Merhaba, '+(p.ad||'ürün')+' hakkında bilgi almak istiyorum.';
-    return '<article class="card"><div class="ph">'+(img?'<img src="'+esc(img)+'" alt="'+esc(p.ad)+'" loading="lazy" referrerpolicy="no-referrer">':esc(p.marka||p.kategori||''))+'</div><div class="bd"><h3>'+esc(p.ad)+'</h3>'+
-      (p.marka?'<div>'+esc(p.marka)+'</div>':'')+
-      '<div class="tags">'+tags.map(function(t){return '<span>'+esc(t)+'</span>'}).join('')+'</div>'+
-      '<div class="price">'+(p.fiyat&&p.fiyat.trim()?esc(p.fiyat):'Fiyat için sorun')+'</div>'+
-      (norm(p.stok)==='yok'?'<div class="out">Şu an stokta yok</div>':'')+
-      '<a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/'+WA+'?text='+encodeURIComponent(msg)+'">WhatsApp\'tan Sor</a></div></article>'}).join('')}
-function drawAll(){drawTabs();drawFilters();drawGrid()}
-$('tabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;state.cat=b.getAttribute('data-c');state.f={};drawAll()});
-$('filters').addEventListener('change',function(e){state.f[e.target.getAttribute('data-f')]=e.target.value;drawGrid()});
-$('q').addEventListener('input',function(e){state.q=norm(e.target.value);drawGrid()});
-fetch(CSV_URL).then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(t){
-  var rows=parseCSV(t),head=rows.shift().map(norm);
-  items=rows.map(function(r){var o={};head.forEach(function(h,i){o[h]=(r[i]||'').trim()});return o}).filter(function(o){return o.ad});
-  if(!items.length){$('grid').innerHTML='<div class="msg">Katalog şu an boş. Ürünler için bize WhatsApp\'tan yazabilirsiniz.</div>';return}
-  drawAll()}).catch(function(){$('grid').innerHTML='<div class="msg">Ürünler şu an yüklenemedi. Lütfen WhatsApp veya telefonla ulaşın.</div>'});
-})();
-</script>
+<script src="/assets/site.js" defer></script>
+<script src="/assets/katalog.js" defer></script>
 </body>
 </html>

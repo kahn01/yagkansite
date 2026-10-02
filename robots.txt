@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yagkan.com.tr/sitemap.xml

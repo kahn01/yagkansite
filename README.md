@@ -1,2 +1,5 @@
 # yagkansite
-yagkan madeni yağ ve özen hırdavat için kurumsal tanıtım websitesi.Ürün kataloğu yol tarifi alma adres ve yorum yapma işlevleri
+
+Yağkan Madeni Yağ (Canik / Samsun) tanıtım sitesi: motor yağları, hırdavat, ürün kataloğu (Google Sheet), yol tarifi ve yorum.
+
+Site dosyaları depo kökündedir; Cloudflare Workers (yagkansite) bu depodan otomatik yayınlar.
