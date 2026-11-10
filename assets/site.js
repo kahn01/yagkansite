@@ -107,7 +107,7 @@ window.YAGKAN = {
       telephone: C.phone,
       image: [C.url + 'img/hero-yag-reyonu-697.webp', C.url + 'img/og-yagkan.jpg'],
       logo: C.url + 'icon-512.png',
-      description: 'Samsun Canik Eski Sanayi Sitesi\'nde madeni yağ: kamyon ve ağır vasıta, traktör, binek ve motosiklet motor yağları, şanzıman ve hidrolik yağları, antifriz, fren hidroliği, gres; ayrıca cıvata, filtre ve hırdavat. Toptan alımlarda toptan fiyat.',
+      description: 'Samsun Canik Eski Sanayi Sitesi\'nde madeni yağ: kamyon ve ağır vasıta, traktör, binek ve motosiklet motor yağları, şanzıman ve hidrolik yağları, antifriz, fren hidroliği, gres; ayrıca cıvata, filtre ve hırdavat. Toptan alımlarda toptan fiyat. Samsun içi teslimat yapılır (minimum tutar için iletişime geçin).',
       address: { '@type': 'PostalAddress', streetAddress: C.street, addressLocality: C.district, addressRegion: C.city, postalCode: C.postalCode, addressCountry: 'TR' },
       geo: { '@type': 'GeoCoordinates', latitude: C.geo.lat, longitude: C.geo.lng },
       hasMap: C.mapsUrl,
@@ -117,6 +117,7 @@ window.YAGKAN = {
       currenciesAccepted: 'TRY',
       paymentAccepted: 'Nakit, Kredi Kartı, Banka Havalesi',
       knowsAbout: ['Motor yağı', 'Hidrolik yağ', 'Şanzıman yağı', 'Antifriz', 'Fren hidroliği', 'Cıvata', 'Filtre', 'Hırdavat'],
+      hasOfferCatalog: { '@type': 'OfferCatalog', name: 'Madeni Yağ ve Hırdavat Ürünleri' },
       openingHoursSpecification: groups().filter(function (gr) { return gr.h; }).map(function (gr) {
         return { '@type': 'OpeningHoursSpecification', dayOfWeek: gr.days.map(function (d) { return SCHEMA_DAYS[d]; }), opens: gr.h[0], closes: gr.h[1] };
       })
@@ -126,7 +127,6 @@ window.YAGKAN = {
     s.textContent = JSON.stringify(ld);
     document.head.appendChild(s);
 
-    // Breadcrumb
     var breadcrumb = {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
