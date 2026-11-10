@@ -19,10 +19,8 @@ window.YAGKAN = {
   city: 'Samsun',
   postalCode: '55100',
   geo: { lat: 41.2749062, lng: 36.3509397 },
-  // Google haritalar kaydı (g.page/r/CW2NRjnnthD6EAE linkinden çözüldü)
   mapsUrl: 'https://www.google.com/maps?cid=18019103213323980141',
   reviewUrl: 'https://g.page/r/CW2NRjnnthD6EAE/review',
-  // Gün numarası: 1=Pazartesi ... 6=Cumartesi, 0=Pazar. Kapalı gün: null
   hours: {
     1: ['08:30', '18:00'],
     2: ['08:30', '18:00'],
@@ -32,8 +30,6 @@ window.YAGKAN = {
     6: ['08:30', '18:00'],
     0: null
   },
-  // Katalog fiyatlarının yanına yazılacak not. Örn: 'KDV dahil' veya '+ KDV'.
-  // Boş bırakılırsa not gösterilmez. Tabloda "kdv" sütunu varsa satır bazında o kullanılır.
   priceNote: 'KDV dahil',
   catalogCsv: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR7TTSVHmU-i_IAX3ldiYT2yBubRv22yTlQ7VMAmNoueTywHmIG97zE0dlbBRZ1S92FaA8JJBaIHB6M/pub?output=csv'
 };
@@ -48,7 +44,6 @@ window.YAGKAN = {
   var dot = function (t) { return t.replace(':', '.'); };
   var toMin = function (t) { var p = t.split(':'); return +p[0] * 60 + +p[1]; };
 
-  // Ardışık aynı saatli günleri grupla
   function groups() {
     var out = [];
     ORDER.forEach(function (d) {
@@ -61,16 +56,13 @@ window.YAGKAN = {
     return g.days.length > 1 ? DAYS[g.days[0]] + ' – ' + DAYS[g.days[g.days.length - 1]] : DAYS[g.days[0]];
   }
 
-  // Yıl
   document.querySelectorAll('[data-year]').forEach(function (el) { el.textContent = new Date().getFullYear(); });
 
-  // Türkiye saatine göre şimdi
   var parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Istanbul', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false }).formatToParts(new Date());
   var g = function (t) { return parts.find(function (x) { return x.type === t; }).value; };
   var today = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[g('weekday')];
   var now = (parseInt(g('hour'), 10) % 24) * 60 + parseInt(g('minute'), 10);
 
-  // Saat tablosu
   var tbl = $('hoursTable');
   if (tbl) {
     tbl.innerHTML = groups().map(function (gr) {
@@ -79,7 +71,6 @@ window.YAGKAN = {
         (gr.h ? dot(gr.h[0]) + ' – ' + dot(gr.h[1]) : 'Kapalı') + '</td></tr>';
     }).join('');
   }
-  // Kısa saat metni (alt bilgi vb.)
   var short = groups().map(function (gr) {
     var ab = function (d) { return ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt'][d]; };
     var lbl = gr.days.length > 1 ? ab(gr.days[0]) + '–' + ab(gr.days[gr.days.length - 1]) : ab(gr.days[0]);
@@ -87,7 +78,6 @@ window.YAGKAN = {
   }).join(' · ');
   document.querySelectorAll('[data-hours-short]').forEach(function (el) { el.textContent = short; });
 
-  // Açık / kapalı rozeti
   var st = $('status');
   if (st) {
     var h = C.hours[today], open = !!h && now >= toMin(h[0]) && now < toMin(h[1]), text;
@@ -107,7 +97,6 @@ window.YAGKAN = {
     $('statusText').textContent = text;
   }
 
-  // Google için yapısal veri (JSON-LD) — saatler ayarlardan gelir
   if (document.body.hasAttribute('data-ld')) {
     var ld = {
       '@context': 'https://schema.org',
@@ -124,6 +113,10 @@ window.YAGKAN = {
       hasMap: C.mapsUrl,
       sameAs: [C.mapsUrl],
       areaServed: { '@type': 'City', name: 'Samsun' },
+      priceRange: 'TL',
+      currenciesAccepted: 'TRY',
+      paymentAccepted: 'Nakit, Kredi Kartı, Banka Havalesi',
+      knowsAbout: ['Motor yağı', 'Hidrolik yağ', 'Şanzıman yağı', 'Antifriz', 'Fren hidroliği', 'Cıvata', 'Filtre', 'Hırdavat'],
       openingHoursSpecification: groups().filter(function (gr) { return gr.h; }).map(function (gr) {
         return { '@type': 'OpeningHoursSpecification', dayOfWeek: gr.days.map(function (d) { return SCHEMA_DAYS[d]; }), opens: gr.h[0], closes: gr.h[1] };
       })
@@ -132,5 +125,19 @@ window.YAGKAN = {
     s.type = 'application/ld+json';
     s.textContent = JSON.stringify(ld);
     document.head.appendChild(s);
+
+    // Breadcrumb
+    var breadcrumb = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Ana Sayfa', item: C.url },
+        { '@type': 'ListItem', position: 2, name: 'Ürün Kataloğu', item: C.url + 'urunler.html' }
+      ]
+    };
+    var b = document.createElement('script');
+    b.type = 'application/ld+json';
+    b.textContent = JSON.stringify(breadcrumb);
+    document.head.appendChild(b);
   }
 })();
