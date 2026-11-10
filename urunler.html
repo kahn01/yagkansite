@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light only">
+<meta name="color-scheme" content="light dark">
 <title>Ürün Kataloğu – Motor Yağı, Hidrolik ve Şanzıman Yağı | Yağkan Madeni Yağ, Samsun</title>
 <meta name="description" content="Yağkan Madeni Yağ ürün kataloğu: Castrol, Mobil, Opet, Petrol Ofisi ve diğer markalarda kamyon, traktör, binek motor yağı, hidrolik ve şanzıman yağı, antifriz, gres, cıvata. Canik / Samsun.">
 <link rel="canonical" href="https://yagkan.com.tr/urunler.html">
@@ -44,11 +44,21 @@
   <div class="wrap">
     <h1>Ürün Kataloğu</h1>
     <p class="lead">Kamyon, traktör, binek ve motosiklet motor yağları; şanzıman ve hidrolik yağları, antifriz, fren hidroliği, gres ve cıvata. Listede olmayan ürünleri de sorabilirsiniz; stok ve güncel fiyat için WhatsApp'tan yazın.</p>
-    <div class="tools"><input id="q" type="search" placeholder="Ürün ara: marka, viskozite (15W-40), ölçü..." aria-label="Ürün ara"></div>
+    <div class="tools">
+      <input id="q" type="search" placeholder="Ürün ara: marka, viskozite (15W-40), ölçü..." aria-label="Ürün ara">
+      <label class="sort-label">Sırala:
+        <select id="sort" aria-label="Sıralama">
+          <option value="default">Varsayılan (stokta olanlar önce)</option>
+          <option value="price-asc">Fiyat: Düşükten yükseğe</option>
+          <option value="price-desc">Fiyat: Yüksekten düşüğe</option>
+          <option value="name">İsme göre (A-İ)</option>
+        </select>
+      </label>
+    </div>
     <div class="tabs" id="tabs"></div>
     <details class="filterbox" id="filterbox"><summary>Filtrele: marka, viskozite, ambalaj…</summary><div class="filters" id="filters"></div></details>
     <div class="count" id="count" aria-live="polite"></div>
-    <div class="grid" id="grid"><div class="msg">Ürünler yükleniyor...</div></div>
+    <div class="grid" id="grid"><div class="msg skeleton">Ürünler yükleniyor...</div></div>
     <noscript><div class="msg">Katalog için JavaScript gerekir. Stok ve fiyat için arayın: 0532 647 23 67</div></noscript>
   </div>
 </section>
