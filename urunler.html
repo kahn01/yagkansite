@@ -43,26 +43,24 @@
   </div>
 </header>
 <main>
-<section id="katalog">
+<section id="katalog" class="catalog-page">
   <div class="wrap">
-    <h1>Ürün Kataloğu</h1>
-    <p class="lead">Kamyon, traktör, binek ve motosiklet motor yağları; şanzıman ve hidrolik yağları, antifriz, fren hidroliği, gres ve cıvata. Listede olmayan ürünleri de sorabilirsiniz; stok ve güncel fiyat için WhatsApp'tan yazın.</p>
-    <div class="tools">
-      <input id="q" type="search" placeholder="Ürün ara: marka, viskozite (15W-40), ölçü..." aria-label="Ürün ara">
-      <label class="sort-label">Sırala:
-        <select id="sort" aria-label="Sıralama">
-          <option value="default">Varsayılan (stokta olanlar önce)</option>
-          <option value="price-asc">Fiyat: Düşükten yükseğe</option>
-          <option value="price-desc">Fiyat: Yüksekten düşüğe</option>
-          <option value="name">İsme göre (A-İ)</option>
-        </select>
-      </label>
+    <div class="catalog-heading">
+      <div class="catalog-eyebrow"><span></span> YAĞKAN · ÜRÜN KOLEKSİYONU</div>
+      <h1>İHTİYACIN OLAN<br><em>DOĞRU ÜRÜN.</em></h1>
+      <p class="lead">Motor yağından hidrolik yağa, antifrizden hırdavat ürünlerine kadar ürünlerimizi keşfet. Marka, viskozite veya ürün adıyla ara; güncel stok ve fiyatı bize sor.</p>
+      <div class="catalog-trust"><span>✓ Geniş ürün seçeneği</span><span>✓ Güncel liste</span><span>✓ Samsun'dan hizmet</span></div>
     </div>
-    <div class="tabs" id="tabs"></div>
-    <details class="filterbox" id="filterbox"><summary>Filtrele: marka, viskozite, ambalaj…</summary><div class="filters" id="filters"></div></details>
-    <div class="count" id="count" aria-live="polite"></div>
+    <div class="catalog-toolbar">
+      <div class="catalog-search"><span aria-hidden="true">⌕</span><input id="q" type="search" placeholder="Ürün, marka, viskozite veya ölçü ara..." aria-label="Ürün ara"><button id="clearSearch" type="button" aria-label="Aramayı temizle" hidden>✕</button></div>
+      <label class="sort-label"><span>SIRALAMA</span><select id="sort" aria-label="Sıralama"><option value="default">Önerilen sıralama</option><option value="price-asc">Fiyat: düşükten yükseğe</option><option value="price-desc">Fiyat: yüksekten düşüğe</option><option value="name">İsim: A–Z</option></select></label>
+    </div>
+    <div class="catalog-section-label"><span>KATEGORİLER</span><small>İlgilendiğin grubu seç</small></div>
+    <div class="tabs" id="tabs" aria-label="Ürün kategorileri"></div>
+    <details class="filterbox" id="filterbox"><summary><span>Detaylı filtreler</span><small>Marka, viskozite, ambalaj ve diğer özellikler</small></summary><div class="filters" id="filters"></div></details>
+    <div class="catalog-results"><div class="count" id="count" aria-live="polite">Ürün listesi hazırlanıyor…</div></div>
     <div class="grid" id="grid"><div class="msg skeleton">Ürünler yükleniyor...</div></div>
-    <noscript><div class="msg">Katalog için JavaScript gerekir. Stok ve fiyat için arayın: 0532 647 23 67</div></noscript>
+    <div class="catalog-help"><div><span class="catalog-help-kicker">ARADIĞIN ÜRÜNÜ BULAMADIN MI?</span><h2>Listede olmayan ürünleri de sorabilirsin.</h2><p>Ürün adı veya ihtiyacını bize ilet; stok ve güncel fiyat bilgisi için yardımcı olalım.</p></div><a class="btn btn-wa" href="https://wa.me/905326472367?text=Merhaba%2C%20katalogda%20bulamad%C4%B1%C4%9F%C4%B1m%20bir%20%C3%BCr%C3%BCn%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp'tan ulaşın ↗</a></div>
   </div>
 </section>
 </main>
@@ -91,6 +89,6 @@
   <a class="d" href="https://www.google.com/maps/dir/?api=1&amp;destination=Yenimahalle%20Mahallesi%205.%20Sokak%20Eski%20Sanayi%20Sitesi%20No%3A24%2C%20Canik%2C%20Samsun%2C%20T%C3%BCrkiye" target="_blank" rel="noopener"><span aria-hidden="true">⌖</span> Yol Tarifi</a>
 </nav>
 <script src="/assets/site.js?v=20261113" defer></script>
-<script src="/assets/katalog.js?v=20261113" defer></script>
+<script src="/assets/katalog.js?v=20261113-catalog2" defer></script>
 </body>
 </html>
