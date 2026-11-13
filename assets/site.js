@@ -149,10 +149,21 @@ window.YAGKAN = {
     timeSelect.innerHTML = '<option value="">Saatler yükleniyor…</option>';
     if (!dateInput.value) return;
     try {
-      var response = await fetch(api + '/api/slots?date=' + encodeURIComponent(dateInput.value));
+      var response = await fetch(api + '/api/slots?date=' + encodeURIComponent(dateInput.value), {
+        method: 'GET',
+        mode: 'cors',
+        cache: 'no-store',
+        headers: { 'Accept': 'application/json' }
+      });
+      if (!response.ok) {
+        throw new Error('Sunucu hatası (HTTP ' + response.status + ')');
+      }
       var data = await response.json();
+      if (!Array.isArray(data.slots)) {
+        throw new Error(data.error || 'Sunucudan geçersiz saat bilgisi geldi.');
+      }
       timeSelect.innerHTML = '';
-      if (!data.slots || !data.slots.length) {
+      if (!data.slots.length) {
         timeSelect.innerHTML = '<option value="">Uygun saat yok</option>';
         return;
       }
@@ -160,7 +171,8 @@ window.YAGKAN = {
         return '<option value="' + slot + '">' + slot + '</option>';
       }).join('');
     } catch (e) {
-      timeSelect.innerHTML = '<option value="">Saatler yüklenemedi</option>';
+      var reason = e && e.message ? e.message : 'Bağlantı kurulamadı';
+      timeSelect.innerHTML = '<option value="">Saatler yüklenemedi: ' + reason.replace(/[<>]/g, '') + '</option>';
     }
   });
   form.addEventListener('submit', async function (event) {
