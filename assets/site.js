@@ -134,3 +134,58 @@ window.YAGKAN = {
     document.head.appendChild(s);
   }
 })();
+
+/* Online servis randevusu */
+(function () {
+  var form = document.getElementById('bookingForm');
+  if (!form) return;
+  var dateInput = document.getElementById('bookingDate');
+  var timeSelect = document.getElementById('bookingTime');
+  var message = document.getElementById('bookingMessage');
+  var api = 'https://api.yagkan.com.tr';
+  var today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Istanbul', year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+  dateInput.min = today;
+  dateInput.addEventListener('change', async function () {
+    timeSelect.innerHTML = '<option value="">Saatler yükleniyor…</option>';
+    if (!dateInput.value) return;
+    try {
+      var response = await fetch(api + '/api/slots?date=' + encodeURIComponent(dateInput.value));
+      var data = await response.json();
+      timeSelect.innerHTML = '';
+      if (!data.slots || !data.slots.length) {
+        timeSelect.innerHTML = '<option value="">Uygun saat yok</option>';
+        return;
+      }
+      timeSelect.innerHTML = '<option value="">Saat seçin</option>' + data.slots.map(function (slot) {
+        return '<option value="' + slot + '">' + slot + '</option>';
+      }).join('');
+    } catch (e) {
+      timeSelect.innerHTML = '<option value="">Saatler yüklenemedi</option>';
+    }
+  });
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    var button = form.querySelector('button[type="submit"]');
+    button.disabled = true;
+    message.textContent = 'Randevu talebiniz gönderiliyor…';
+    var values = Object.fromEntries(new FormData(form).entries());
+    values.year = values.year ? Number(values.year) : null;
+    try {
+      var response = await fetch(api + '/api/bookings', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values)
+      });
+      var result = await response.json();
+      if (!response.ok) throw new Error(result.error || 'Randevu gönderilemedi.');
+      message.textContent = result.message;
+      form.reset();
+      timeSelect.innerHTML = '<option value="">Önce tarih seçin</option>';
+      dateInput.min = today;
+    } catch (error) {
+      message.textContent = error.message;
+    } finally {
+      button.disabled = false;
+    }
+  });
+})();
