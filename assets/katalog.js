@@ -145,7 +145,7 @@
   function drawGrid() {
     var list = sortList(items.filter(match));
     var inStock = list.filter(function (p) { return !p._out; }).length;
-    $('count').textContent = list.length + ' ürün' + (inStock < list.length ? ' (' + inStock + ' stokta)' : '');
+    $('count').textContent = list.length + ' ürün listeleniyor · ' + inStock + ' ürün stokta olarak işaretli';
     if (!list.length) {
       $('grid').innerHTML = '<div class="msg">Aradığınız ürün katalogda görünmüyor; bu stokta olmadığı anlamına gelmez. <a href="https://wa.me/' + WA + '?text=' + encodeURIComponent('Merhaba, ' + ($('q').value || 'bir ürün') + ' var mı?') + '" target="_blank" rel="noopener"><strong>WhatsApp\'tan sorun</strong></a> veya arayın: <a href="tel:+' + WA + '">' + esc(C.phoneDisplay || '') + '</a></div>';
       return;
@@ -168,12 +168,13 @@
 
   $('tabs').addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; state.cat = b.getAttribute('data-c'); state.f = {}; drawAll(); });
   $('filters').addEventListener('change', function (e) { state.f[e.target.getAttribute('data-f')] = e.target.value; drawGrid(); });
-  $('q').addEventListener('input', function (e) { state.q = norm(e.target.value); drawGrid(); });
+  $('q').addEventListener('input', function (e) { state.q = norm(e.target.value); if ($('clearSearch')) $('clearSearch').hidden = !e.target.value; drawGrid(); });
+  if ($('clearSearch')) $('clearSearch').addEventListener('click', function () { $('q').value = ''; state.q = ''; $('clearSearch').hidden = true; $('q').focus(); drawGrid(); });
   var sortEl = $('sort');
   if (sortEl) sortEl.addEventListener('change', function (e) { state.sort = e.target.value; drawGrid(); });
 
   var qp = new URLSearchParams(location.search).get('q');
-  if (qp) { $('q').value = qp; state.q = norm(qp); }
+  if (qp) { $('q').value = qp; state.q = norm(qp); if ($('clearSearch')) $('clearSearch').hidden = false; }
 
   var ctrl = 'AbortController' in window ? new AbortController() : null;
   var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 12000);
