@@ -5,7 +5,7 @@
    (JSON-LD) buradan otomatik üretilir.
 
    !!! ÇALIŞMA SAATLERİ GOOGLE İŞLETME PROFİLİ İLE BİREBİR AYNI OLMALI !!!
-   Onaylanan saatler (2 Ekim 2026): Pazartesi–Cumartesi 08:30–18:00, Pazar kapalı.
+   Onaylanan saatler (2 Ekim 2026): Pazartesi–Cumartesi 08:30–17:30, Pazar kapalı.
    Saat değişirse burayı VE Google profilini aynı gün güncelleyin.
    ===================================================================== */
 window.YAGKAN = {
@@ -24,12 +24,12 @@ window.YAGKAN = {
   reviewUrl: 'https://g.page/r/CW2NRjnnthD6EAE/review',
   // Gün numarası: 1=Pazartesi ... 6=Cumartesi, 0=Pazar. Kapalı gün: null
   hours: {
-    1: ['08:30', '18:00'],
-    2: ['08:30', '18:00'],
-    3: ['08:30', '18:00'],
-    4: ['08:30', '18:00'],
-    5: ['08:30', '18:00'],
-    6: ['08:30', '18:00'],
+    1: ['08:30', '17:30'],
+    2: ['08:30', '17:30'],
+    3: ['08:30', '17:30'],
+    4: ['08:30', '17:30'],
+    5: ['08:30', '17:30'],
+    6: ['08:30', '17:30'],
     0: null
   },
   // Katalog fiyatlarının yanına yazılacak not. Örn: 'KDV dahil' veya '+ KDV'.
