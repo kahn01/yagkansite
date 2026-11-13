@@ -348,3 +348,17 @@ footer{padding:42px 0;background:#0b141b}
  .info{padding:22px}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal-ready .reveal{opacity:1;transform:none}}
+
+/* Native, script-independent responsive navigation */
+.site-menu{position:relative}
+.site-menu>.nav-toggle{list-style:none;cursor:pointer;user-select:none}
+.site-menu>.nav-toggle::-webkit-details-marker{display:none}
+.site-menu>.nav-toggle::marker{content:""}
+.site-menu[open]>.nav-toggle{border-color:var(--amber);color:var(--amber)}
+@media(max-width:760px){
+ .site-menu{margin-left:auto}
+ .site-menu>.site-links{display:flex;position:absolute;right:0;top:calc(100% + 14px);width:min(88vw,340px);padding:14px 18px 18px;background:#101a23;border:1px solid #ffffff20;border-radius:14px;box-shadow:0 18px 36px #0005;flex-direction:column;align-items:stretch;gap:0}
+ .site-menu>.site-links a{padding:14px 8px;border-bottom:1px solid #ffffff16}
+ .site-menu>.site-links .nav-cta{text-align:center;margin-top:12px;border:0}
+}
+@media(min-width:761px){.site-menu>.nav-toggle{display:none}}
