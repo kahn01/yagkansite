@@ -362,3 +362,6 @@ footer{padding:42px 0;background:#0b141b}
  .site-menu>.site-links .nav-cta{text-align:center;margin-top:12px;border:0}
 }
 @media(min-width:761px){.site-menu>.nav-toggle{display:none}}
+
+/* Ensure closed native details menus stay hidden despite the flex layout. */
+@media(max-width:760px){.site-menu:not([open])>.site-links{display:none!important}.site-menu[open]>.site-links{display:flex!important}}
