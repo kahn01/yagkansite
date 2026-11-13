@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light only">
+<title>Online Servis Randevusu | Yağkan Madeni Yağ – Samsun</title>
+<meta name="description" content="Yağkan Madeni Yağ Samsun Canik Eski Sanayi'de yağ ve filtre değişimi için online servis randevusu oluşturun.">
+<link rel="canonical" href="https://yagkan.com.tr/randevu.html">
+<meta name="theme-color" content="#14212b">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/site.css?v=20261113">
+<style>
+.booking-page{padding:48px 0 64px}.booking-panel{max-width:760px;margin:0 auto;background:#fff;border:1px solid #e1e6ea;border-radius:14px;padding:clamp(18px,4vw,34px);box-shadow:0 8px 28px rgba(20,33,43,.07)}
+.booking-panel .cats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.booking-panel label{display:block;font-weight:600}
+.booking-panel input:not([type=checkbox]),.booking-panel select,.booking-panel textarea{display:block;width:100%;padding:12px;border:1px solid #cbd3da;border-radius:8px;font:inherit;margin-top:5px;background:white;color:#17212b}
+.booking-panel textarea{margin:8px 0}
+.booking-panel button{border:0;cursor:pointer}
+#bookingMessage{font-weight:600}
+.booking-top{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+@media(max-width:600px){.booking-panel .cats{grid-template-columns:1fr}.booking-page{padding:30px 0 48px}}
+</style>
+</head>
+<body data-ld>
+<a class="skip" href="#bookingForm">Randevu formuna geç</a>
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kicker">Samsun · Canik · Eski Sanayi Sitesi</span>
+      <h1>Online<span>Servis Randevusu</span></h1>
+      <p class="sub">Yağ ve filtre değişimi için size uygun günü ve saati seçin. Talebiniz işletme tarafından onaylandığında randevunuz kesinleşir.</p>
+      <div class="actions">
+        <a class="btn btn-call" href="tel:+905326472367">Hemen Ara: 0532 647 23 67</a>
+        <a class="btn btn-ghost" href="/">Ana Sayfaya Dön</a>
+      </div>
+    </div>
+  </div>
+</header>
+<main>
+<section class="booking-page">
+  <div class="wrap">
+    <div class="booking-top">
+      <div>
+        <h2>Randevu Talep Formu</h2>
+        <p class="lead">Randevular bir saatliktir. Çalışma saatlerimiz Pazartesi–Cumartesi 08:30–17:30, Pazar kapalıdır.</p>
+      </div>
+    </div>
+    <form id="bookingForm" class="booking-panel">
+      <div class="cats">
+        <label>Ad soyad<input name="name" required minlength="3" autocomplete="name"></label>
+        <label>Telefon<input name="phone" required type="tel" autocomplete="tel" placeholder="05xx xxx xx xx"></label>
+        <label>E-posta (isteğe bağlı)<input name="email" type="email" autocomplete="email"></label>
+        <label>Plaka<input name="plate" required placeholder="55 ABC 123"></label>
+        <label>Marka<input name="make" required placeholder="Örn. Renault"></label>
+        <label>Model<input name="model" required placeholder="Örn. Clio"></label>
+        <label>Model yılı<input name="year" type="number" min="1950" max="2035"></label>
+        <label>Motor bilgisi<input name="engine" placeholder="Örn. 1.5 dCi"></label>
+        <label>Tarih<input name="date" id="bookingDate" type="date" required></label>
+        <label>Saat<select name="time" id="bookingTime" required><option value="">Önce tarih seçin</option></select></label>
+      </div>
+      <label style="display:block;margin-top:14px">Yapılacak işlem / not<textarea name="note" rows="3" maxlength="500" placeholder="Örn. motor yağı ve yağ filtresi değişimi"></textarea></label>
+      <label style="display:block;margin:14px 0"><input type="checkbox" required> Randevu talebim için bilgilerimin işletme tarafından işlenmesini kabul ediyorum. <a href="/gizlilik.html">Aydınlatma metni</a></label>
+      <button class="btn btn-call" type="submit">Randevu Talebi Gönder</button>
+      <p id="bookingMessage" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <p><strong>Yağkan Madeni Yağ</strong> · Yenimahalle Mah. 5. Sk. Eski Sanayi Sitesi No:24, 55100 Canik / Samsun · <a href="tel:+905326472367">0532 647 23 67</a></p>
+    <p><span data-hours-short></span></p>
+    <p>© <span data-year>2026</span> Yağkan Madeni Yağ · <a href="/">Ana Sayfa</a> · <a href="/urunler.html">Ürün Kataloğu</a> · <a href="/gizlilik.html">Aydınlatma Metni</a></p>
+  </div>
+</footer>
+<nav class="sticky" aria-label="Hızlı iletişim">
+  <a class="c" href="tel:+905326472367">Ara</a>
+  <a class="w" href="https://wa.me/905326472367?text=Merhaba%2C%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp</a>
+</nav>
+<script src="/assets/site.js?v=20261114" defer></script>
+</body>
+</html>
