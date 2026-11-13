@@ -34,6 +34,12 @@
      (site Cloudflare proxy'si arkasındaysa panelden "otomatik kurulum" da seçilebilir; o zaman bu satıra gerek yok).
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "BURAYA_CLOUDFLARE_TOKEN"}'></script>
 -->
+<style>
+#randevu .cat{display:block}#randevu .cats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+#randevu label{display:block;font-weight:600}#randevu input:not([type=checkbox]),#randevu select,#randevu textarea{display:block;width:100%;padding:12px;border:1px solid #cbd3da;border-radius:8px;font:inherit;margin-top:5px;background:white;color:#17212b}
+#randevu textarea{width:100%;margin:8px 0}#randevu button{border:0;cursor:pointer}#bookingMessage{font-weight:600}
+@media(max-width:600px){#randevu .cats{grid-template-columns:1fr}}
+</style>
 </head>
 <body data-ld>
 <a class="skip" href="#urunler">İçeriğe geç</a>
@@ -63,6 +69,31 @@
 </header>
 
 <main>
+<section id="randevu">
+  <div class="wrap">
+    <h2>Online Servis Randevusu</h2>
+    <p class="lead">Yağ ve filtre değişimi için bir saatlik randevu talebi oluşturun. Randevunuz işletme tarafından onaylandığında kesinleşir.</p>
+    <form id="bookingForm" class="cat" style="max-width:760px">
+      <div class="cats">
+        <label>Ad soyad<input name="name" required minlength="3" autocomplete="name"></label>
+        <label>Telefon<input name="phone" required type="tel" autocomplete="tel" placeholder="05xx xxx xx xx"></label>
+        <label>E-posta (isteğe bağlı)<input name="email" type="email" autocomplete="email"></label>
+        <label>Plaka<input name="plate" required placeholder="55 ABC 123"></label>
+        <label>Marka<input name="make" required placeholder="Örn. Renault"></label>
+        <label>Model<input name="model" required placeholder="Örn. Clio"></label>
+        <label>Model yılı<input name="year" type="number" min="1950" max="2035"></label>
+        <label>Motor bilgisi<input name="engine" placeholder="Örn. 1.5 dCi"></label>
+        <label>Tarih<input name="date" id="bookingDate" type="date" required></label>
+        <label>Saat<select name="time" id="bookingTime" required><option value="">Önce tarih seçin</option></select></label>
+      </div>
+      <label>Yapılacak işlem / not<textarea name="note" rows="3" maxlength="500" placeholder="Örn. motor yağı ve yağ filtresi değişimi"></textarea></label>
+      <label style="display:block;margin:14px 0"><input type="checkbox" required> Randevu talebim için bilgilerimin işletme tarafından işlenmesini kabul ediyorum. <a href="/gizlilik.html">Aydınlatma metni</a></label>
+      <button class="btn btn-call" type="submit">Randevu Talebi Gönder</button>
+      <p id="bookingMessage" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
 <section class="brands" aria-labelledby="markalar">
   <div class="wrap">
     <h2 id="markalar">Stoktaki markalar</h2>
