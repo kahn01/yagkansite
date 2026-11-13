@@ -1,0 +1,38 @@
+/* Premium footer + contact actions */
+.site-footer{position:relative;overflow:hidden;background:radial-gradient(ellipse at 85% 0%,#1c3545 0%,transparent 42%),linear-gradient(125deg,#071018,#101f2b 70%,#0a151e);color:#c3cdd4;padding:58px 0 0;border-top:1px solid #ffffff18}
+.site-footer:before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,transparent,var(--gold),#fff0b0,var(--gold),transparent)}
+.footer-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,70px);padding-bottom:46px}
+.footer-brand{display:inline-flex;align-items:center;gap:12px;color:#fff;text-decoration:none;font:800 1.65rem/.88 "Barlow Condensed",sans-serif;letter-spacing:.08em}
+.footer-brand-mark{display:grid;place-items:center;width:46px;height:46px;background:var(--gold);color:#08131d;border-radius:12px 3px 12px 3px;font-size:1.7rem}
+.footer-brand small{display:block;margin-top:7px;color:#a9b7c1;font:700 .57rem Barlow,sans-serif;letter-spacing:.18em}
+.footer-about{max-width:430px;margin-top:23px;color:#bdc8cf;line-height:1.75}
+.footer-address{margin-top:20px;color:#fff;font-weight:600;line-height:1.7}
+.footer-hours{margin-top:9px;color:#aebbc4;font-size:.88rem}
+.footer-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-content:center}
+.footer-action{display:flex;align-items:flex-start;gap:12px;min-height:142px;padding:19px 16px;border:1px solid #ffffff20;border-radius:14px;background:#ffffff08;color:#fff;text-decoration:none;transition:transform .2s,border-color .2s,background .2s;position:relative}
+.footer-action:hover{transform:translateY(-4px);border-color:var(--gold);background:#ffffff12}
+.footer-action-icon{display:grid;place-items:center;flex:none;width:34px;height:34px;border-radius:10px;background:#ffffff12;color:var(--gold);font-size:1.2rem}
+.footer-action small{display:block;color:#aab8c1;font-size:.64rem;font-weight:800;letter-spacing:.13em}
+.footer-action strong{display:block;margin-top:8px;font-size:1rem;line-height:1.2}
+.footer-action em{display:block;margin-top:8px;color:#aebbc4;font-size:.75rem;line-height:1.35;font-style:normal}
+.footer-action>b{position:absolute;right:13px;bottom:10px;color:var(--gold);font-size:1.05rem}
+.footer-whatsapp .footer-action-icon{color:#7ce0a1}.footer-directions .footer-action-icon{color:#ffd06a}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:20px 0 calc(20px + env(safe-area-inset-bottom));border-top:1px solid #ffffff18;color:#8f9da7;font-size:.78rem}
+.footer-bottom nav{display:flex;flex-wrap:wrap;gap:10px 20px}
+.footer-bottom a{color:#cbd4da;text-decoration:none}.footer-bottom a:hover{color:var(--gold)}
+.sticky{display:none}
+@media(max-width:900px){.footer-wrap{grid-template-columns:1fr}.footer-actions{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){
+ .site-footer{padding-top:40px}
+ .footer-wrap{gap:25px;padding-bottom:30px}
+ .footer-actions{grid-template-columns:1fr;gap:9px}
+ .footer-action{min-height:84px;align-items:center;padding:13px 15px}
+ .footer-action strong{margin-top:3px}.footer-action em{margin-top:3px}
+ .footer-bottom{align-items:flex-start;flex-direction:column;padding-bottom:18px}
+ .footer-bottom nav{gap:10px 15px}
+ .sticky{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));position:fixed;left:0;right:0;bottom:0;z-index:120;padding:0 0 env(safe-area-inset-bottom);background:#08131d;border-top:1px solid #ffffff20;box-shadow:0 -10px 30px #0003}
+ .sticky a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:58px;padding:7px 3px;text-align:center;font-size:.74rem;font-weight:800;letter-spacing:.01em;text-decoration:none;color:#fff}
+ .sticky a span{font-size:1.12rem;line-height:1}
+ .sticky .c{background:#101f2b;color:#ffd06a}.sticky .w{background:#137a43;color:#fff}.sticky .d{background:#eaa51d;color:#101820}
+ body{padding-bottom:calc(66px + env(safe-area-inset-bottom))}
+}
