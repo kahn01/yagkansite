@@ -201,3 +201,42 @@ window.YAGKAN = {
     }
   });
 })();
+
+
+/* ===== Progressive enhancement: navigation, reveal and back-to-top ===== */
+(function(){
+  'use strict';
+  var nav=document.querySelector('.site-nav');
+  if(nav){
+    var toggle=nav.querySelector('.nav-toggle');
+    var links=nav.querySelector('.site-links');
+    if(toggle&&links){
+      toggle.addEventListener('click',function(){
+        var open=toggle.getAttribute('aria-expanded')!=='true';
+        toggle.setAttribute('aria-expanded',String(open));
+        links.classList.toggle('is-open',open);
+      });
+      links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){links.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');});});
+      document.addEventListener('keydown',function(e){if(e.key==='Escape'){links.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');}});
+    }
+  }
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealTargets=document.querySelectorAll('main section,.cat,.trade,.gallery figure,.booking-panel');
+  if(!reduce&&'IntersectionObserver'in window&&revealTargets.length){
+    revealTargets.forEach(function(el){el.classList.add('reveal');});
+    document.documentElement.classList.add('reveal-ready');
+    var observer=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}});
+    },{threshold:.12,rootMargin:'0px 0px -35px 0px'});
+    revealTargets.forEach(function(el){observer.observe(el);});
+  }
+  var top=document.createElement('button');
+  top.type='button';top.className='back-top';top.setAttribute('aria-label','Sayfanın başına dön');top.textContent='↑';
+  document.body.appendChild(top);
+  top.addEventListener('click',function(){window.scrollTo({top:0,behavior:reduce?'auto':'smooth'});});
+  var ticking=false;
+  window.addEventListener('scroll',function(){
+    if(ticking)return;ticking=true;
+    window.requestAnimationFrame(function(){top.classList.toggle('is-visible',window.scrollY>650);ticking=false;});
+  },{passive:true});
+})();
