@@ -18,7 +18,7 @@ a{text-underline-offset:4px}
 .site-links .nav-cta{padding:12px 18px;background:var(--gold);color:var(--night);border-radius:8px;font-weight:800;box-shadow:0 8px 24px #f5ad2425}
 .site-links .nav-cta:hover{background:var(--gold-light);color:var(--night)}
 .nav-toggle{display:none;align-items:center;gap:8px;background:transparent;border:1px solid #ffffff35;color:#fff;border-radius:9px;padding:10px 13px;font:600 .95rem Barlow,sans-serif;cursor:pointer}
-.cinema-hero{min-height:min(850px,calc(100svh - 78px));min-height:min(850px,calc(100vh - 78px));position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;color:#fff;background:var(--night);padding:clamp(74px,9vw,132px) 0 100px}
+.cinema-hero{min-height:min(850px,calc(100vh - 78px));min-height:min(850px,calc(100svh - 78px));position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;color:#fff;background:var(--night);padding:clamp(74px,9vw,132px) 0 100px}
 .cinema-backdrop{position:absolute;inset:0;z-index:-3;overflow:hidden}
 .cinema-backdrop img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 44%;opacity:.63;filter:saturate(.68) contrast(1.08);animation:cinema-drift 22s ease-in-out infinite alternate}
 .cinema-shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(5,12,18,.98) 0%,rgba(5,12,18,.91) 34%,rgba(5,12,18,.58) 66%,rgba(5,12,18,.35) 100%),linear-gradient(0deg,rgba(5,12,18,.86),transparent 44%,rgba(5,12,18,.18))}
@@ -137,7 +137,7 @@ footer p+p{margin-top:8px}
  .site-links.is-open{display:flex!important}
  .site-links a{padding:14px 8px;border-bottom:1px solid #ffffff16;font-size:.98rem}
  .site-links .nav-cta{text-align:center;margin-top:12px;border:0}
- .cinema-hero{min-height:calc(88svh - 66px);min-height:calc(88vh - 66px);padding:76px 0 104px}
+ .cinema-hero{min-height:calc(88vh - 66px);min-height:calc(88svh - 66px);padding:76px 0 104px}
  .cinema-backdrop img{object-position:58% center;opacity:.48}
  .cinema-shade{background:linear-gradient(90deg,rgba(5,12,18,.94),rgba(5,12,18,.62)),linear-gradient(0deg,rgba(5,12,18,.84),transparent 55%)}
  .cinema-copy h1{font-size:clamp(3.6rem,16vw,6rem)}
