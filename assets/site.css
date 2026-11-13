@@ -3,13 +3,8 @@
 @font-face{font-family:Barlow;font-weight:600;font-style:normal;font-display:swap;src:url(/fonts/barlow-semibold.woff2) format("woff2")}
 @font-face{font-family:"Barlow Condensed";font-weight:700;font-style:normal;font-display:swap;src:url(/fonts/barlowcondensed-bold.woff2) format("woff2")}
 @font-face{font-family:"Barlow Condensed";font-weight:800;font-style:normal;font-display:swap;src:url(/fonts/barlowcondensed-extrabold.woff2) format("woff2")}
-html{color-scheme:light dark}
+html{color-scheme:light only}
 :root{--ink:#14212b;--steel:#4f5f6a;--line:#d5dbdf;--bg:#f2f4f5;--white:#fff;--amber:#f2a900;--amber-d:#c98900;--wa:#16843f}
-@media(prefers-color-scheme:dark){
-  :root{--ink:#e8eef2;--steel:#a0b0bc;--line:#2a3a48;--bg:#0f1923;--white:#1a2632;--amber:#f2a900;--amber-d:#e09a00;--wa:#1a9b4a}
-  .hero,.top,footer,.trade{background:#0a1218}
-  .brands,.trust,.card,.filterbox,.msg{background:var(--white)}
-}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
 body{font-family:Barlow,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;font-size:17px}
