@@ -203,23 +203,10 @@ window.YAGKAN = {
 })();
 
 
-/* ===== Progressive enhancement: navigation, reveal and back-to-top ===== */
+/* ===== Progressive enhancement: reveal and back-to-top ===== */
 (function(){
   'use strict';
-  var nav=document.querySelector('.site-nav');
-  if(nav){
-    var toggle=nav.querySelector('.nav-toggle');
-    var links=nav.querySelector('.site-links');
-    if(toggle&&links){
-      toggle.addEventListener('click',function(){
-        var open=toggle.getAttribute('aria-expanded')!=='true';
-        toggle.setAttribute('aria-expanded',String(open));
-        links.classList.toggle('is-open',open);
-      });
-      links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){links.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');});});
-      document.addEventListener('keydown',function(e){if(e.key==='Escape'){links.classList.remove('is-open');toggle.setAttribute('aria-expanded','false');}});
-    }
-  }
+  // Mobile navigation is controlled only by assets/nav.js.
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var revealTargets=document.querySelectorAll('main section,.cat,.trade,.gallery figure,.booking-panel');
   if(!reduce&&'IntersectionObserver'in window&&revealTargets.length){
